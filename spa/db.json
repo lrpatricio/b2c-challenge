@@ -1,0 +1,20 @@
+{
+  "products": [ 
+    {
+      "id": "12",
+      "status": 0,
+      "name" : "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "1"
+    }
+  ],
+  "categories": [ 
+    {
+      "id": "1",
+      "status": 0,
+      "name" : "café",
+      "color": "white"
+    }
+  ]
+}
