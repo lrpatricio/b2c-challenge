@@ -1,17 +1,17 @@
 <?php
 
+use api\app\controllers\admin\CategoriesController;
 use api\core\helpers\Directory;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use api\core\helpers\Routes;
 use Slim\Factory\AppFactory;
+use Slim\Interfaces\RouteCollectorProxyInterface as RouteCollectorProxy;
 
 $app = AppFactory::create();
 $app->setBasePath(Directory::getBase(__DIR__));
 
-$app->get('/', function (Request $request, Response $response, array $args)
+$app->group('/admin/categories', function (RouteCollectorProxy $group)
 {
-    $response->getBody()->write("Hello World.");
-    return $response;
+    Routes::groupCrud($group, CategoriesController::class);
 });
 
 $app->run();
