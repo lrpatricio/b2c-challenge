@@ -2,3 +2,5 @@
 .idea_modules/
 vendor/
 .vscode/
+.env
+*.mwb.bak
