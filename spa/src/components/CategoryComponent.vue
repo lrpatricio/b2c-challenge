@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{categoria}}
+    {{ categoria }}
   </div>
 </template>
 
@@ -8,12 +8,11 @@
 export default {
   data() {
     return {
-      categoria: 'dados da categoria'
-    }
-  }
-}
+      categoria: "dados da categoria",
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>

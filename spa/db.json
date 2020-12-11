@@ -6,14 +6,6 @@
       "name": "café",
       "price": 18.5,
       "image": "http://testes.com/arquivo.png",
-      "categoryId": "1"
-    },
-    {
-      "id": "12",
-      "status": 0,
-      "name": "café",
-      "price": 18.5,
-      "image": "http://testes.com/arquivo.png",
       "categoryId": "2"
     },
     {
@@ -43,12 +35,6 @@
   ],
   "categories": [
     {
-      "id": "1",
-      "status": 0,
-      "name": "café",
-      "color": "white"
-    },
-    {
       "id": "2",
       "status": 0,
       "name": "café",
@@ -77,6 +63,12 @@
       "status": 0,
       "name": "café",
       "color": "white"
+    },
+    {
+      "name": "teste",
+      "status": "Ativado",
+      "color": "Vermelho",
+      "id": "lI_Gk0F"
     }
   ]
 }

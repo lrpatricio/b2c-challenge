@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{home}}
+    {{ home }}
   </div>
 </template>
 
@@ -8,12 +8,11 @@
 export default {
   data() {
     return {
-      home: 'HOME HAHAHAHAAH'
-    }
-  }
-}
+      home: "HOME HAHAHAHAAH",
+    };
+  },
+};
 </script>
 
 <style>
-
 </style>
