@@ -3,10 +3,27 @@ import CategoryComponent from './components/CategoryComponent.vue';
 import ProductComponent from './components/ProductComponent.vue';
 import NotFindComponent from './components/NotFindComponent.vue';
 
+import AdminCategoryComponent from './components/AdminCategoryComponent.vue';
+import AdminCategoryComponentCreate from './components/AdminCategoryComponentCreate.vue';
+import AdminComponent from './components/AdminComponent.vue';
+
 export default [
     {path: '/', component: HomeComponent, name:'home'},
     {path: '/product', component: ProductComponent, name: 'product'},
     {path: '/category', component: CategoryComponent, name: 'category'},
-    {path:'*', component: NotFindComponent, name:'404'}
+    {path:'*', component: NotFindComponent, name:'404'},
+    
+    { path: '/admin', component: AdminComponent,
+      children: [
+        {
+          path: 'category',
+          component: AdminCategoryComponent
+        },
+        {
+          path: 'category/novo',
+          component: AdminCategoryComponentCreate
+        }
+      ]
+    }
 ]
 

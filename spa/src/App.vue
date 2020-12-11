@@ -19,10 +19,14 @@
           Cateoria
         </v-btn>
         
-        <v-btn to="/product">
+        
+        <v-btn to="/admin">
+          Admin
+        </v-btn>
+        
+        <v-btn to="/admin/category">
           Cateoria
         </v-btn>
-           
           
 
         <v-spacer></v-spacer>
