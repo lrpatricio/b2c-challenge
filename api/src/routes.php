@@ -29,5 +29,10 @@ $app->get('/menu[/]', function (Request $request, Response $response)
     $controller = new MenuController($request, $response);
     return $controller->categories();
 });
+$app->get('/products/{categoryId}[/]', function (Request $request, Response $response, array $args)
+{
+    $controller = new \api\app\controllers\site\ProductsController($request, $response);
+    return $controller->get($args['categoryId']);
+});
 
 $app->run();
