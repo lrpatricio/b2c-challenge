@@ -5,7 +5,13 @@ import NotFindComponent from './components/NotFindComponent.vue';
 
 import AdminCategoryComponent from './components/AdminCategoryComponent.vue';
 import AdminCategoryComponentCreate from './components/AdminCategoryComponentCreate.vue';
+import AdminProductComponent from './components/AdminProductComponent.vue';
+import AdminProductCreateComponent from './components/AdminProductCreateComponent.vue';
+import AdminProductEditComponent from './components/AdminProductEditComponent.vue';
+
+
 import AdminComponent from './components/AdminComponent.vue';
+
 
 export default [
     {path: '/', component: HomeComponent, name:'home'},
@@ -22,6 +28,18 @@ export default [
         {
           path: 'category/novo',
           component: AdminCategoryComponentCreate
+        },
+        {
+          path: 'product',
+          component: AdminProductComponent
+        },
+        {
+          path: 'product/create',
+          component: AdminProductCreateComponent
+        },
+        {
+          path: 'product/edit/:id',
+          component: AdminProductEditComponent
         }
       ]
     }
