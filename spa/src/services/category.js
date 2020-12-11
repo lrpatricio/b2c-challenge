@@ -14,7 +14,8 @@ const categoryService = {
   },
 
   categoryRemove: (id) => {
-    return api.delete("categories", id);
+    console.log(id)
+    return api.delete(`/categories/${id}`);
   },
 
   categoryUpdate: (id) => {
@@ -23,3 +24,4 @@ const categoryService = {
 };
 
 export default categoryService;
+
