@@ -2,7 +2,7 @@ import api from "./api";
 
 const categoryService = {
   create: (data) => {
-    return api.post("categories", data);
+    return api.post('categories/',data);
   },
   
   findAll: () => {

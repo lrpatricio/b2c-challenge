@@ -4,6 +4,7 @@ import ProductComponent from './components/ProductComponent.vue';
 import NotFindComponent from './components/NotFindComponent.vue';
 
 import AdminCategoryComponent from './components/AdminCategoryComponent.vue';
+import AdminCategoryComponentCreate from './components/AdminCategoryComponentCreate.vue';
 import AdminComponent from './components/AdminComponent.vue';
 
 export default [
@@ -17,6 +18,10 @@ export default [
         {
           path: 'category',
           component: AdminCategoryComponent
+        },
+        {
+          path: 'category/novo',
+          component: AdminCategoryComponentCreate
         }
       ]
     }
