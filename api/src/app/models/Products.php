@@ -26,4 +26,9 @@ class Products extends Model
             'categoryId'
         ];
     }
+
+    public function allActiveByCategory($categoryId)
+    {
+        return $this->all('*', 'status = 1 AND categoryId = :categoryId', [':categoryId' => $categoryId]);
+    }
 }
