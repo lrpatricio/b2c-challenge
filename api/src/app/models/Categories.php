@@ -15,6 +15,11 @@ use api\core\app\Model;
  */
 class Categories extends Model
 {
+    public function allActive()
+    {
+        return $this->all('*', 'status = 1');
+    }
+
     public function fillables()
     {
         return [
