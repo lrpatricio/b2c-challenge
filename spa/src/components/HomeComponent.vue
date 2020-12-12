@@ -1,6 +1,10 @@
 <template>
   <div>
-    {{home}}
+    <v-row>
+      <v-col md="3">
+        Menu
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -10,6 +14,9 @@ export default {
     return {
       home: 'HOME HAHAHAHAAH'
     }
+  },
+  created() {
+    
   }
 }
 </script>

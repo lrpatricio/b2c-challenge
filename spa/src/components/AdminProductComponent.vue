@@ -1,10 +1,16 @@
 <template>
   <div>
+    <h2>Gestão de Produtos</h2>
     <v-container>
-      <v-btn color="primary" to="/admin/products/novo">Adicionar</v-btn>
+      <v-row
+        :justify="'end'">
+        <v-col md="2">
+           <v-btn color="primary" to="/admin/product/create">Adicionar</v-btn>
+        </v-col>
+      </v-row>
     </v-container>
 
-    <v-simple-table>
+    <v-simple-table v-if="products && products.length">
       <thead>
         <tr>
           <th class="text-left">#Id</th>
@@ -21,15 +27,24 @@
           <td>{{ product.status }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.price }}</td>
+          <td>{{ product.categoryId }} </td>
           <td>
-            <v-btn color="primary">
+
+            <v-btn :to="`product/edit/${product.id}`">
+              <v-icon left> mdi-file </v-icon>
+              Upload
+            </v-btn>
+
+            |
+
+            <v-btn color="primary" :to="`product/edit/${product.id}`">
               <v-icon left> mdi-pencil </v-icon>
               Editar
             </v-btn>
 
             |
 
-            <v-btn color="error" @click="productRemove(product)">
+            <v-btn color="error">
               <v-icon left> mdi-delete </v-icon>
               Excluir
             </v-btn>
@@ -41,19 +56,23 @@
 </template>
 
 <script>
+import productsApi from '../services/product';
+
 export default {
   name: "AdminProducts",
   data() {
     return {
-      products
+      products: []
     }
   },
-  created() {},
+  created() {
+    this.getProducts();
+  },
   methods: {
-    getProducts() {
-
+    async getProducts() {
+      const result = await productsApi.findAll();
+      this.products = result.data;
     },
-    productRemote(product) {}
   }
 };
 </script>
