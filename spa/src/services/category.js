@@ -10,16 +10,15 @@ const categoryService = {
   },
 
   findById: (id) => {
-    return api.get("categories", id);
+    return api.get(`/categories/${id}`);
   },
 
   categoryRemove: (id) => {
-    console.log(id)
     return api.delete(`/categories/${id}`);
   },
 
-  categoryUpdate: (id) => {
-    return api.put("categories", id);
+  categoryUpdate: (id, data) => {
+    return api.put(`categories/${id}`, data);
   },
 };
 
