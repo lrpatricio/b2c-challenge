@@ -30,7 +30,7 @@
           <td>{{ product.categoryId }} </td>
           <td>
 
-            <v-btn :to="`product/edit/${product.id}`">
+            <v-btn :to="`product/fileupload/${product.id}`">
               <v-icon left> mdi-file </v-icon>
               Upload
             </v-btn>

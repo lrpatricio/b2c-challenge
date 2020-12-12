@@ -8,7 +8,7 @@ import AdminCategoryComponentCreate from './components/AdminCategoryComponentCre
 import AdminProductComponent from './components/AdminProductComponent.vue';
 import AdminProductCreateComponent from './components/AdminProductCreateComponent.vue';
 import AdminProductEditComponent from './components/AdminProductEditComponent.vue';
-
+import AdminProductFileuploadComponent from './components/AdminProductFileuploadComponent.vue';
 
 import AdminComponent from './components/AdminComponent.vue';
 
@@ -40,6 +40,10 @@ export default [
         {
           path: 'product/edit/:id',
           component: AdminProductEditComponent
+        },
+        {
+          path: 'product/fileupload/:id',
+          component: AdminProductFileuploadComponent
         }
       ]
     }
