@@ -1,46 +1,82 @@
 {
   "products": [
     {
-      "name": "Tenis nike runner",
-      "price": "50",
-      "status": "Ativo",
-      "categoryId": 1,
-      "id": 1
-    },
-    {
-      "name": "Sapatinho ai",
-      "price": "50",
-      "status": "Ativo",
-      "categoryId": 2,
-      "id": 2
-    },
-    {
-      "name": "Novo tENIS",
-      "price": "0500",
-      "status": "Ativo",
-      "categoryId": 1,
-      "id": 3
-    },
-    {
-      "name": "",
-      "price": 0,
+      "id": "12",
       "status": 0,
-      "categoryId": null,
-      "id": 4
+      "name": "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "1"
+    },
+    {
+      "id": "12",
+      "status": 0,
+      "name": "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "2"
+    },
+    {
+      "id": "12",
+      "status": 0,
+      "name": "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "3"
+    },
+    {
+      "id": "12",
+      "status": 0,
+      "name": "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "4"
+    },
+    {
+      "id": "12",
+      "status": 0,
+      "name": "café",
+      "price": 18.5,
+      "image": "http://testes.com/arquivo.png",
+      "categoryId": "5"
     }
   ],
   "categories": [
     {
-      "name": "Roupas",
-      "status": "Ativado",
-      "color": "Preto",
-      "id": 1
+      "id": "1",
+      "status": 0,
+      "name": "café",
+      "color": "white"
     },
     {
-      "name": "Sapatos",
-      "status": "Ativado",
-      "color": "Amarelo",
-      "id": 2
+      "id": "2",
+      "status": 0,
+      "name": "café",
+      "color": "white"
+    },
+    {
+      "id": "3",
+      "status": 0,
+      "name": "café",
+      "color": "white"
+    },
+    {
+      "id": "4",
+      "status": 0,
+      "name": "café",
+      "color": "white"
+    },
+    {
+      "id": "5",
+      "status": 0,
+      "name": "café",
+      "color": "white"
+    },
+    {
+      "id": "6",
+      "status": 0,
+      "name": "café",
+      "color": "white"
     }
   ]
 }
