@@ -30,23 +30,20 @@
           <td>{{ product.categoryId }} </td>
           <td>
 
-            <v-btn :to="`product/fileupload/${product.id}`">
-              <v-icon left> mdi-file </v-icon>
-              Upload
+            <v-btn color="secondary" :to="`product/fileupload/${product.id}`" small >
+              <v-icon> mdi-file </v-icon>
             </v-btn>
 
             |
 
-            <v-btn color="primary" :to="`product/edit/${product.id}`">
-              <v-icon left> mdi-pencil </v-icon>
-              Editar
+            <v-btn color="primary" :to="`product/edit/${product.id}`" small>
+              <v-icon> mdi-pencil </v-icon>
             </v-btn>
 
             |
 
-            <v-btn color="error">
-              <v-icon left> mdi-delete </v-icon>
-              Excluir
+            <v-btn color="error" @click="productRemove(product)" small>
+              <v-icon> mdi-delete </v-icon>
             </v-btn>
           </td>
         </tr>
@@ -72,6 +69,13 @@ export default {
     async getProducts() {
       const result = await productsApi.findAll();
       this.products = result.data;
+    },
+     async productRemove(product) {
+      const confirm = window.confirm(`Deseja excluir ${product.name}`);
+      if (confirm) {
+        await productsApi.productRemove(product.id);
+        this.getProducts();
+      }
     },
   }
 };

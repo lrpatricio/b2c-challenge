@@ -1,9 +1,6 @@
 <template>
   <div>
-    <v-container>
-      <v-btn color="primary" to="/admin/category">Categorias</v-btn>
-    </v-container>
-
+      <h2>Atualizar produto #{{product.id}}</h2>
     <div v-if="product">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
@@ -72,10 +69,11 @@ export default {
       this.product = result.data;
     },
     async saveProduct() {
-      const result = await productService.update(this.product);
+      const result = await productService.productUpdate(this.product);
 
       if (result.status === 201 || result.status == 200) {
-        alert("Produto cadastro com sucesso");
+        alert("Produto atualizado com sucesso");
+        this.$router.push('/admin/product')
       }
     },
   },

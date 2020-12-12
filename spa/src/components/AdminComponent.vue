@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div >
     <v-row>
-      <v-col class="col-md-3">
+      <v-col class="col-md-3" >
         <v-list>
           <v-subheader>Menu</v-subheader>
           <v-list-item-group color="primary">
@@ -46,4 +46,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+
+</style>

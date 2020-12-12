@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>Adicionar novo produto</h2>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field v-model="name" label="Nome para o produto" required>
       </v-text-field>
@@ -34,7 +35,7 @@
 
 <script>
 import categoryService from "../services/category";
-import productService from '../services/product';
+import productService from "../services/product";
 
 export default {
   name: "AdminProductCreate",
@@ -49,9 +50,7 @@ export default {
       categories: [],
     };
   },
-  computed: {
-
-  },
+  computed: {},
   created() {
     this.getCategories();
   },
@@ -66,15 +65,14 @@ export default {
         name: this.name,
         price: this.price,
         status: this.status,
-        categoryId: this.categoryId
+        categoryId: this.categoryId,
       });
 
       if (result.status === 201 || result.status == 200) {
-        alert('Produto cadastro com sucesso');
-        this.$router.push('/admin/product')
+        alert("Produto cadastro com sucesso");
+        this.$router.push("/admin/product");
       }
-    }
-    
+    },
   },
 };
 </script>

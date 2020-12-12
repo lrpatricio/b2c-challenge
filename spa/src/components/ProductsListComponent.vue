@@ -9,6 +9,11 @@
           ></v-img>
 
           <v-card-title>{{ product.name }}</v-card-title>
+
+          <v-row justify="end">
+             <v-col md="auto" style="padding: 1rem; color: #649c9c"><b>{{ price(product.price) }}</b></v-col>
+          </v-row>
+
         </v-card>
       </v-col>
     </v-row>
@@ -33,6 +38,10 @@ export default {
       const result = await productService.findAll();
       this.products = result.data;
     },
+    price(price) {
+      return Number(price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+    }
   },
 };
 </script>
