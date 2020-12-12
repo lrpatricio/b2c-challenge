@@ -9,15 +9,15 @@ const productService = {
   },
 
   findById: (id) => {
-    return api.get("products", id);
+    return api.get(`products/${id}`);
   },
 
   productRemove: (id) => {
-    return api.delete("products", id);
+    return api.delete(`products/${id}`);
   },
 
-  productUpdate: (id) => {
-    return api.put("products", id);
+  productUpdate: (data) => {
+    return api.put(`products/${data.id}`, data);
   },
 };
 
