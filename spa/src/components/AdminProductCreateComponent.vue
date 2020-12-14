@@ -11,6 +11,8 @@
       <v-select
         v-model="status"
         :items="statusData"
+        :item-value="value"
+        :item-text="text"
         :rules="[(v) => !!v || 'Item is required']"
         label="Ativado/Desativado"
         required
@@ -45,7 +47,7 @@ export default {
       name: "",
       price: 0,
       status: 0,
-      statusData: ["Ativo", "Desativo"],
+      statusData: [{value: 1, text: "Ativo"}, { value: 0, text: "Desativo"}],
       categoryId: null,
       categories: [],
     };
