@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const api = axios.create({
-  baseURL: 'http://localhost:8000/admin'
+  baseURL: 'http://andremart.com.br'
 });
 
 api.defaults.headers.common['Content-Type'] = 'application/json';
