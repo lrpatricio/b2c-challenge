@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h2>Atualizar produto #{{product.id}}</h2>
+      <h2>Atualizar produto</h2>
     <div v-if="product">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
@@ -16,6 +16,8 @@
         <v-select
           v-model="product.status"
           :items="statusData"
+          item-text="text"
+          item-value="value"
           :rules="[(v) => !!v || 'Item is required']"
           label="Ativado/Desativado"
           required
@@ -49,7 +51,7 @@ export default {
     return {
       valid: false,
       product: null,
-      statusData: ["Ativo", "Desativo"],
+      statusData: [{value: "1", text: "Ativo"}, { value: "0", text: "Desativo"}],
       categories: null,
     };
   },
