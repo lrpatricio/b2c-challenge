@@ -8,9 +8,10 @@
       <v-text-field v-model="name" label="Nome para o produto" required>
       </v-text-field>
 
-      <v-select
+       <v-select
         v-model="status"
         :items="statusData"
+        :item-value="statusData.value"
         :rules="[(v) => !!v || 'Item is required']"
         label="Ativado/Desativado"
         required
@@ -38,9 +39,9 @@ export default {
     return {
       id: this.$route.params.id,
       name: "",
-      status: 0,
+      status: '',
       color: "",
-      statusData: ["Ativado", "Desativado"],
+      statusData : [{value: 1, text: "Ativo"}, { value: 0, text: "Desativo"}],
       statusColors: ["Amarelo", "Preto", "Vermelho", "Branco"],
       valid: true,
     };
