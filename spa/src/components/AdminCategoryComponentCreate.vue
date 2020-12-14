@@ -19,7 +19,8 @@
        <v-select
         v-model="status"
         :items="statusData"
-        :rules="[v => !!v || 'Item is required']"
+        :item-value="statusData.value"
+        :rules="[(v) => !!v || 'Item is required']"
         label="Ativado/Desativado"
         required
       ></v-select>
@@ -53,11 +54,9 @@ export default {
   data() {
     return {
         name: '',
-        status:0,
+        status: '',
         color: '',
-        statusData : [
-          "Ativado", "Desativado"
-        ],
+        statusData : [{value: 1, text: "Ativo"}, { value: 0, text: "Desativo"}],
          statusColors : [
           "Amarelo", "Preto", "Vermelho", "Branco"
         ],
@@ -83,17 +82,14 @@ export default {
       }
     },
     async saveCategory() {
-      const category = {
+      const result = await adminCategory.create({
         name: this.name,
         status: this.status,
         color: this.color
-      }
-      const { status } = await adminCategory.create(category);
-      if(status === 201) { 
-        this.$router.push('/admin/category'); 
-      } else {
-        alert('Houve um problema ao salvar os dados');
-        return;
+      });
+      if (result.status === 201 || result.status == 200) {
+        alert("Categoria cadastrada com sucesso");
+        this.$router.push("/admin/category");
       }
     }
   },
