@@ -21,7 +21,7 @@
           <td>{{ category.name }}</td>
           <td>{{ category.color }}</td>
           <td>
-            <v-btn color="primary">
+             <v-btn color="primary" :to="`category/editar/${category.id}`">
               <v-icon left> mdi-pencil </v-icon>
               Editar
             </v-btn>
