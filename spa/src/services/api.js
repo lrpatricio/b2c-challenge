@@ -1,11 +1,8 @@
 import axios from 'axios'
-import https from 'https';
+
 
 const api = axios.create({
-  baseURL: 'http://andremart.com.br',
-  httpsAgent: new https.Agent({  
-    rejectUnauthorized: false
-  })
+  baseURL: 'https://andremart.com.br'
 });
 
 api.defaults.headers.common['Content-Type'] = 'application/json';
