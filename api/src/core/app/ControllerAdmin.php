@@ -79,6 +79,7 @@ abstract class ControllerAdmin extends ControllerSample implements IController
         }
         catch(\Exception $e)
         {
+            var_dump($e);
             return Json::response($this->getResponse(), [
                 'msg' => 'Falha ao adicionado registro.'
             ], StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR);
@@ -98,6 +99,7 @@ abstract class ControllerAdmin extends ControllerSample implements IController
         }
         catch(\Exception $e)
         {
+            var_dump($e);
             return Json::response($this->getResponse(), [
                 'msg' => 'Falha ao atualizado registro.'
             ], StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR);
