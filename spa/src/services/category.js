@@ -2,7 +2,7 @@ import api from "./api";
 
 const categoryService = {
   create: (data) => {
-    return api.post('categories/',data);
+    return api.post("categories", data);
   },
   
   findAll: () => {
@@ -10,11 +10,11 @@ const categoryService = {
   },
 
   findById: (id) => {
-    return api.get(`/categories/${id}`);
+    return api.get(`categories/${id}`);
   },
 
   categoryRemove: (id) => {
-    return api.delete(`/categories/${id}`);
+    return api.delete(`categories/${id}`);
   },
 
   categoryUpdate: (id, data) => {
