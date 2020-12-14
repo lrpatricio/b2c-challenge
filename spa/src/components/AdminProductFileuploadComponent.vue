@@ -66,7 +66,11 @@ export default {
     },
     async saveImage() {
       this.product.image = this.image;
-      await productService.productUpdate(this.product);
+      const result = await productService.productUpdate(this.product);
+      if (result.status === 200) {
+        alert('Imagem enviado com sucesso');
+        this.$router.push('/admin/product');
+      }
     },
   },
 };

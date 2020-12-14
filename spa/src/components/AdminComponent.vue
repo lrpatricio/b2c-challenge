@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import categoryApi from "../services/category";
 export default {
   data() {
     return {
@@ -33,15 +32,9 @@ export default {
     };
   },
   created() {
-    this.loadCategory();
   },
   methods: {
-    loadCategory() {
-      categoryApi.findAll().then((result) => {
-        this.category = result.data;
-        console.log(this.category);
-      });
-    },
+
   },
 };
 </script>
