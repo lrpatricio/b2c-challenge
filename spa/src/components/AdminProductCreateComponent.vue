@@ -1,11 +1,21 @@
 <template>
   <div>
     <h2>Adicionar novo produto</h2>
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field v-model="name" label="Nome para o produto" required>
+    <v-form ref="form" v-model="valid">
+      <v-text-field
+        v-model="name"
+        :rules=" [v => !!v || 'Campo obrigatório']"
+        label="Nome para o produto"
+        required
+      >
       </v-text-field>
 
-      <v-text-field v-model="price" label="Valor do produto" required>
+      <v-text-field
+        v-model="price"
+        :rules="[(v) => !!v || 'Campo obrigatório']"
+        label="Valor do produto"
+        required
+      >
       </v-text-field>
 
       <v-select
@@ -28,7 +38,7 @@
         required
       ></v-select>
 
-      <v-btn color="error" class="mr-4" @click="saveProduct">
+      <v-btn color="error" class="mr-4" @click="saveProduct" :disabled="!valid">
         Salvar
       </v-btn>
     </v-form>
@@ -46,8 +56,11 @@ export default {
       valid: "",
       name: "",
       price: 0,
-      status: '0',
-      statusData: [{value: "1", text: "Ativo"}, { value: "0", text: "Desativo"}],
+      status: "0",
+      statusData: [
+        { value: "1", text: "Ativo" },
+        { value: "0", text: "Desativo" },
+      ],
       categoryId: null,
       categories: [],
     };

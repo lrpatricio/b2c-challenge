@@ -2,15 +2,20 @@
   <div>
       <h2>Atualizar produto</h2>
     <div v-if="product">
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-form ref="form" v-model="valid">
         <v-text-field
           v-model="product.name"
           label="Nome para o produto"
+          :rules=" [v => !!v || 'Campo obrigatório']"
           required
         >
         </v-text-field>
 
-        <v-text-field v-model="product.price" label="Valor do produto" required>
+        <v-text-field 
+          v-model="product.price" 
+          label="Valor do produto"
+          :rules=" [v => !!v || 'Campo obrigatório']"
+          >
         </v-text-field>
 
         <v-select
@@ -33,7 +38,7 @@
           required
         ></v-select>
 
-        <v-btn color="error" class="mr-4" @click="saveProduct">
+        <v-btn color="error" class="mr-4" @click="saveProduct" :disabled="!valid">
           Salvar
         </v-btn>
       </v-form>
