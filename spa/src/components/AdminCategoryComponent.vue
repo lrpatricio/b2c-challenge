@@ -21,16 +21,14 @@
           <td>{{ category.name }}</td>
           <td>{{ category.color }}</td>
           <td>
-             <v-btn color="primary" :to="`category/editar/${category.id}`">
-              <v-icon left> mdi-pencil </v-icon>
-              Editar
+             <v-btn color="primary" :to="`category/editar/${category.id}`" small>
+              <v-icon> mdi-pencil </v-icon>
             </v-btn>
 
             |
             
-            <v-btn color="error" @click="categoryRemove(category)">
-              <v-icon left> mdi-delete </v-icon>
-              Excluir
+            <v-btn color="error" @click="categoryRemove(category)" small>
+              <v-icon> mdi-delete </v-icon>
             </v-btn>
           </td>
         </tr>
