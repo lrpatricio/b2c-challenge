@@ -1,12 +1,18 @@
 <template>
-  <div >
+  <div>
     <v-row>
-      <v-col class="col-md-3" >
+      <v-col class="col-md-3">
         <v-list>
           <v-subheader>Menu</v-subheader>
           <v-list-item-group color="primary">
             <v-list-item v-for="(item, i) in items" :key="i">
-              <v-list-item-content @click="$router.push(item.route)">
+              <v-list-item-content
+                @click="
+                  $router.push(item.route).catch((error) => {
+                    if (error.name != 'NavigationDuplicated') {
+                      throw error;
+                    }
+                  })">
                 <v-list-item-title v-text="item.text"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
@@ -31,14 +37,10 @@ export default {
       ],
     };
   },
-  created() {
-  },
-  methods: {
-
-  },
+  created() {},
+  methods: {},
 };
 </script>
 
 <style scoped>
-
 </style>

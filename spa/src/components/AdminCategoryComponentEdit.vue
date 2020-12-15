@@ -1,31 +1,37 @@
 <template>
   <div>
-    <v-container>
-      <v-btn color="primary" to="/admin/category">Categorias</v-btn>
-    </v-container>
+    <h2>Editar a categoria: {{ name }}</h2>
 
-    <v-form ref="form" v-model="valid" lazy-validation>
-      <v-text-field v-model="name" label="Nome para o produto" required>
+    <v-form ref="form" v-model="valid">
+      <v-text-field
+        v-model="name"
+        :rules="[(v) => !!v || 'Campo obrigatório']"
+        label="Nome para a categoria"
+        required
+      >
       </v-text-field>
 
-       <v-select
+      <v-select
         v-model="status"
         :items="statusData"
-        :item-value="statusData.value"
+        item-value="value"
+        item-text="text"
         :rules="[(v) => !!v || 'Item is required']"
-        label="Ativado/Desativado"
+        label="Ativada/Desativada"
         required
       ></v-select>
 
       <v-select
         v-model="color"
         :items="statusColors"
+        item-value="value"
+        item-text="text"
         :rules="[(v) => !!v || 'Item is required']"
-        label="Escolha a cor do seu produto"
+        label="Escolha a cor do categoria"
         required
       ></v-select>
 
-      <v-btn color="primary" class="mr-4" @click="updateCategory">
+      <v-btn color="primary" class="mr-4" @click="updateCategory" :disabled="!valid">
         Salvar
       </v-btn>
     </v-form>
@@ -37,13 +43,17 @@ import adminCategory from "../services/category";
 export default {
   data() {
     return {
+      valid: "",
       id: this.$route.params.id,
       name: "",
-      status: '',
+      status: "0",
       color: "",
-      statusData : [{value: 1, text: "Ativo"}, { value: 0, text: "Desativo"}],
+      statusData: [
+        { value: "1", text: "Ativo" },
+        { value: "0", text: "Desativo" },
+      ],
       statusColors: ["Amarelo", "Preto", "Vermelho", "Branco"],
-      valid: true,
+      
     };
   },
 
@@ -53,11 +63,11 @@ export default {
 
   methods: {
     async getCategorySelected() {
-      const category = await adminCategory.findById(this.id);
-      const { name, status, color } = category.data;
-      this.name = name;
-      this.status = status;
-      this.color = color;
+      const result = await adminCategory.findById(this.id);
+      this.name = result.data.name;
+      this.status = result.data.status;
+      this.color = result.data.color;
+      console.log(this.status)
     },
     async updateCategory() {
       const category = {
